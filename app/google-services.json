@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "761516081221",
+    "firebase_url": "https://recipiebook-9f8eb.firebaseio.com",
+    "project_id": "recipiebook-9f8eb",
+    "storage_bucket": "recipiebook-9f8eb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:761516081221:android:05027f4e61435eb50a232c",
+        "android_client_info": {
+          "package_name": "com.example.recipiebook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "761516081221-i8vcegdri5gp19c6j7jl5nta17tje3q0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgAYwksB3PrFGGwxkRQrAEePte0fbk2IQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "761516081221-i8vcegdri5gp19c6j7jl5nta17tje3q0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

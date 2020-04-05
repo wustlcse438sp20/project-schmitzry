@@ -30,4 +30,7 @@
     <string name="reset_title">You have lost all your chips!</string>
     <string name="reset">Your chip, win, and loss counts will now be reset.</string>
     <string name="ok">Okay</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

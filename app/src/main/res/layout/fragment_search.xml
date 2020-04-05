@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragments.SearchFragment">
+
+    <Button
+        android:id="@+id/searchButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="Search"/>
+
+    <EditText
+        android:id="@+id/searchTextInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="search term"
+        android:textSize="18dp"/>
+
+    <!--
+    TODO: Support:
+
+    diets: Vegetarian, Ketogenic, Vegan, Paleo
+    cuisines (idk pick like 5-10 to support:
+        African
+        American
+        British
+        Cajun
+        Caribbean
+        Chinese
+        Eastern European
+        European
+        French
+        German
+        Greek
+        Indian
+        Irish
+        Italian
+        Japanese
+        Jewish
+        Korean
+        Latin American
+        Mediterranean
+        Mexican
+        Middle Eastern
+        Nordic
+        Southern
+        Spanish
+        Thai
+        Vietnamese
+
+    -->
+
+</LinearLayout>

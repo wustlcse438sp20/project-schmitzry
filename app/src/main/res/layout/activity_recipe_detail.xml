@@ -28,17 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:scaleType="fitCenter"
-        />
-
-    <TextView
-        android:id="@+id/cookTime"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20sp"
-        android:layout_marginBottom="20sp"
-        android:text="ready in mins"
-        android:gravity="center"
-        android:textSize="24dp"/>
+        android:padding="10dp"/>
 
     <TextView
         android:id="@+id/recipeTitle"
@@ -48,26 +38,59 @@
         android:layout_marginBottom="20sp"
         android:text="title"
         android:gravity="center"
-        android:textSize="24dp"/>
+        android:textSize="30dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="5dp"
+            android:textSize="24dp"
+            android:text="Cook time: "/>
+
+        <TextView
+            android:id="@+id/cookTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ready in mins"
+            android:layout_weight="1"
+            android:textSize="24dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="5dp"
+            android:textSize="24dp"
+            android:text="minutes"/>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:id="@+id/recipeIngredientListContainer"
+        />
 
     <Button
         android:id="@+id/gotoRecipeOnline"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:text="goto url"/>
+        android:text="go to recipe url"/>
 
     <Button
         android:id="@+id/addToRecipeBook"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:text="add to book"/>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/recipeIngredientListContainer"
-        />
+        android:text="add to a recipe book"/>
 
 </LinearLayout>

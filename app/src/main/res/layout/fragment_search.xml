@@ -6,19 +6,97 @@
     android:orientation="vertical"
     tools:context=".fragments.SearchFragment">
 
-    <Button
-        android:id="@+id/searchButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:text="Search"/>
-
     <EditText
         android:id="@+id/searchTextInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="search term"
+        android:padding="20dp"
+        android:hint="Search"
         android:textSize="18dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:text="Filters"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:gravity="center"
+        android:text="Recipe Type:"/>
+
+    <CheckBox
+        android:id="@+id/BreakfastFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_gravity="center"
+        android:text="Breakfast"/>
+
+    <CheckBox
+        android:id="@+id/LunchFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_gravity="center"
+        android:text="Lunch"/>
+
+    <CheckBox
+        android:id="@+id/DinnerFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_gravity="center"
+        android:text="Dinner"/>
+
+    <CheckBox
+        android:id="@+id/SnackFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_gravity="center"
+        android:text="Snack"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_gravity="center"
+        android:text="Ingredients to Include:"/>
+
+    <EditText
+        android:id="@+id/IncludeFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_gravity="center"
+        android:hint="Ingredient"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_gravity="center"
+        android:text="Ingredients to Exclude:"/>
+
+    <EditText
+        android:id="@+id/ExcludeFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_gravity="center"
+        android:hint="Ingredient"/>
+
+    <Button
+        android:id="@+id/searchButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_margin="20dp"
+        android:text="Search"/>
 
     <!--
     TODO: Support:

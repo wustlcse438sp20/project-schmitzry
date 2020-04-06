@@ -7,7 +7,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import retrofit2.HttpException
 
-const val API_KEY = "559ed69850f448ae9fbc198c573cb79f"
+const val API_KEY = "3c042d58f53547cdbca220b8aaee9ac1"
 
 class SpoonacularRepository {
     private val service = ApiClient.makeRetrofitService()

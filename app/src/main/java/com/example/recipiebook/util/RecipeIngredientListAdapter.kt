@@ -20,9 +20,15 @@ class RecipeIngredientListViewHolder(inflater: LayoutInflater, parent: ViewGroup
         this.parent = parent
     }
 
+    //TODO 1.0 and already has s
     fun bind(recipe: SpoonacularIngredient) {
-        title.text = recipe.name
-        amount.text = "${recipe.amount} ${recipe.unit}"
+        title.text = recipe.name.capitalize()
+        if (recipe.amount == "1" || recipe.unit == "") {
+            amount.text = "${recipe.amount} ${recipe.unit}"
+        } else {
+            amount.text = "${recipe.amount} ${recipe.unit}s"
+        }
+
     }
 
 }

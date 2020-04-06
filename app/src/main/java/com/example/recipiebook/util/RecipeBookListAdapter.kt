@@ -12,21 +12,18 @@ class RecpieBooksViewHolder(resolver: (String) -> Unit, inflater: LayoutInflater
     RecyclerView.ViewHolder(inflater.inflate(R.layout.list_item_recipe_book_list, parent, false)) {
 
     private val title : TextView
-    private val count: TextView
     private val button : Button
     private var resolver: (String) -> Unit = resolver
     private var parent: ViewGroup
 
     init {
         title = itemView.findViewById(R.id.name)
-        count = itemView.findViewById(R.id.recipeCount)
         button = itemView.findViewById(R.id.viewRecipeBookButton)
         this.parent = parent
     }
 
     fun bind(recipe: RecipeBook) {
         title.text = recipe.name
-        count.text = "${recipe.count}"
 
         button.setOnClickListener {
             resolver(recipe.id)

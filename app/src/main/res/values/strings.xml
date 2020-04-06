@@ -3,32 +3,12 @@
 
     <!-- TODO: Remove strings we aren't using -->
     <string name="placeholder">Placeholder</string>
-    <string name="zero"> 0</string>
-
-    <string name="score">Current Score: </string>
-    <string name="chips">Chips: </string>
-    <string name="bet_amount">Bet Amount</string>
-    <string name="bet">Bet</string>
-    <string name="wins">Wins: </string>
-    <string name="losses">Losses: </string>
     <string name="logout">Logout</string>
-
-    <string name="leaderboard">Leaderboard</string>
-    <string name="sort">Sort By:</string>
-    <string name="chips_leader">Chips</string>
-    <string name="wins_leader">Wins</string>
-    <string name="losses_leader">Losses</string>
-
     <string name="login">Login</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
-
     <string name="signup">Sign Up</string>
     <string name="username">Username</string>
-    <string name="takeProfilePhoto">Take Profile Photo</string>
-
-    <string name="reset_title">You have lost all your chips!</string>
-    <string name="reset">Your chip, win, and loss counts will now be reset.</string>
     <string name="ok">Okay</string>
 
     <!-- TODO: Remove or change this placeholder text -->

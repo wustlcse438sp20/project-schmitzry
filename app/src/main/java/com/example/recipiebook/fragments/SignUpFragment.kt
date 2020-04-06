@@ -37,9 +37,9 @@ class SignUpFragment : Fragment() {
 
         val password = signUpPassword.text.toString()
 
-        val username = signUpName.text.toString()
+       // val username = signUpName.text.toString()
 
-        if (username == "" || password == "" || email == "") {
+        if (password == "" || email == "") {
             Toast.makeText(
                 (activity!! as MainActivity), "One of your email, username, or password was blank. Please enter a valid username / email / password",
                 Toast.LENGTH_LONG
@@ -53,13 +53,13 @@ class SignUpFragment : Fragment() {
 
                     println("Created user with email")
 
-                    val profileUpdate = UserProfileChangeRequest.Builder().setDisplayName(username).build()
+                    //val profileUpdate = UserProfileChangeRequest.Builder().setDisplayName(username).build()
 
-                    (activity!! as MainActivity).mAuth!!.currentUser!!.updateProfile(profileUpdate).addOnCompleteListener {
-                        if (task.isSuccessful) {
+                    //(activity!! as MainActivity).mAuth!!.currentUser!!.updateProfile(profileUpdate).addOnCompleteListener {
+                        //if (task.isSuccessful) {
                             (activity!! as MainActivity).launchApp()
-                        }
-                    }
+                        //}
+                    //}
 
                 } else {
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content" android:background="@color/Background">
 
     <TextView
         android:id="@+id/name"
@@ -10,7 +10,8 @@
         android:padding="5dp"
         android:text="name"
         android:gravity="center"
-        android:textSize="18dp"/>
+        android:textSize="18dp"
+        android:textColor="@color/Brown"/>
 
     <TextView
         android:id="@+id/amount"
@@ -19,6 +20,7 @@
         android:padding="5dp"
         android:text="amount"
         android:gravity="center"
-        android:textSize="18dp"/>
+        android:textSize="18dp"
+        android:textColor="@color/Brown"/>
 
 </LinearLayout>

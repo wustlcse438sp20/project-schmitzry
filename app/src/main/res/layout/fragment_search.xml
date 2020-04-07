@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".fragments.SearchFragment">
+    tools:context=".fragments.SearchFragment"
+    android:background="@color/Background">
 
     <EditText
         android:id="@+id/searchTextInput"
@@ -12,21 +13,24 @@
         android:layout_height="wrap_content"
         android:padding="20dp"
         android:hint="Search"
-        android:textSize="18dp"/>
+        android:textSize="18dp"
+        android:textColor="@color/Brown"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="20dp"
         android:text="Filters"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:textColor="@color/Brown"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:gravity="center"
-        android:text="Recipe Type:"/>
+        android:text="Recipe Type:"
+        android:textColor="@color/Brown"/>
 
     <CheckBox
         android:id="@+id/BreakfastFilter"
@@ -34,7 +38,8 @@
         android:layout_height="wrap_content"
         android:padding="5dp"
         android:layout_gravity="center"
-        android:text="Breakfast"/>
+        android:text="Breakfast"
+        android:textColor="@color/Brown"/>
 
     <CheckBox
         android:id="@+id/LunchFilter"
@@ -42,7 +47,8 @@
         android:layout_height="wrap_content"
         android:padding="5dp"
         android:layout_gravity="center"
-        android:text="Lunch"/>
+        android:text="Lunch"
+        android:textColor="@color/Brown"/>
 
     <CheckBox
         android:id="@+id/DinnerFilter"
@@ -50,7 +56,8 @@
         android:layout_height="wrap_content"
         android:padding="5dp"
         android:layout_gravity="center"
-        android:text="Dinner"/>
+        android:text="Dinner"
+        android:textColor="@color/Brown"/>
 
     <CheckBox
         android:id="@+id/SnackFilter"
@@ -58,14 +65,16 @@
         android:layout_height="wrap_content"
         android:padding="5dp"
         android:layout_gravity="center"
-        android:text="Snack"/>
+        android:text="Snack"
+        android:textColor="@color/Brown"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:layout_gravity="center"
-        android:text="Ingredients to Include:"/>
+        android:text="Ingredients to Include:"
+        android:textColor="@color/Brown"/>
 
     <EditText
         android:id="@+id/IncludeFilter"
@@ -73,14 +82,16 @@
         android:layout_height="wrap_content"
         android:padding="5dp"
         android:layout_gravity="center"
-        android:hint="Ingredient"/>
+        android:hint="Ingredient"
+        android:textColor="@color/Brown"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:layout_gravity="center"
-        android:text="Ingredients to Exclude:"/>
+        android:text="Ingredients to Exclude:"
+        android:textColor="@color/Brown"/>
 
     <EditText
         android:id="@+id/ExcludeFilter"
@@ -88,7 +99,8 @@
         android:layout_height="wrap_content"
         android:padding="5dp"
         android:layout_gravity="center"
-        android:hint="Ingredient"/>
+        android:hint="Ingredient"
+        android:textColor="@color/Brown"/>
 
     <Button
         android:id="@+id/searchButton"
@@ -96,7 +108,9 @@
         android:layout_height="wrap_content"
         android:padding="5dp"
         android:layout_margin="20dp"
-        android:text="Search"/>
+        android:text="Search"
+        android:background="@color/Green"
+        android:textColor="@color/LightYellow"/>
 
     <!--
     TODO: Support:

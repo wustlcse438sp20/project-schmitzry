@@ -39,7 +39,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun launchApp() {
-
         val i = Intent(this, ContentActivity::class.java)
         val currentUser = mAuth?.currentUser
         i.putExtra("uid", currentUser!!.uid)

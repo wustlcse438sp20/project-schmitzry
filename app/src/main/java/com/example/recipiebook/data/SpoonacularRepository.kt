@@ -31,10 +31,10 @@ class SpoonacularRepository {
         }
     }
 
-    fun recipeSearchForTerm(resBody: MutableLiveData<RecipeSearchResponse>, query: String, diet: String, cuisine: String) {
+    fun recipeSearchForTerm(resBody: MutableLiveData<RecipeSearchResponse>, query: String, diet: String, exclude: String, cuisine: String) {
         CoroutineScope(Dispatchers.IO).launch {
 
-            val response = service.recipeSearchForTerm(API_KEY, query, diet, cuisine)
+            val response = service.recipeSearchForTerm(API_KEY, query, diet, exclude, cuisine)
 
             println(response.raw().toString())
 

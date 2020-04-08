@@ -1,8 +1,11 @@
 package com.example.recipiebook.activities
 
+import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.ProgressBar
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,6 +15,7 @@ import com.example.recipiebook.data.RecipeSearchItem
 import com.example.recipiebook.data.SpoonacularViewModel
 import com.example.recipiebook.util.INTENT_CODES
 import com.example.recipiebook.util.RecipeSearchResultListAdapter
+import kotlinx.android.synthetic.main.activity_search_result.*
 
 class SearchResultActivity : AppCompatActivity() {
 
@@ -21,6 +25,7 @@ class SearchResultActivity : AppCompatActivity() {
 
     var searchQuery = ""
     var searchDiet = ""
+    var searchExclude = ""
     var searchCuisine = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,7 +33,10 @@ class SearchResultActivity : AppCompatActivity() {
         setContentView(R.layout.activity_search_result)
         searchQuery = intent!!.extras!!.getString("query").toString()
         searchDiet = intent!!.extras!!.getString("diet") ?: ""
-        searchCuisine = intent!!.extras!!.getString("cuisine").toString() ?: ""
+        searchExclude = intent!!.extras!!.getString("exclude") ?: ""
+        searchCuisine = intent!!.extras!!.getString("cuisine") ?: ""
+
+        loadingBar.show()
     }
 
     override fun onStart() {
@@ -45,9 +53,10 @@ class SearchResultActivity : AppCompatActivity() {
             recipeList.clear()
             recipeList.addAll(it.results)
             resultListAdapter.notifyDataSetChanged()
+            loadingBar.hide()
         })
 
-        viewModel.getRecipiesForQuery(searchQuery, searchDiet, searchCuisine)
+        viewModel.getRecipiesForQuery(searchQuery, searchDiet, searchExclude, searchCuisine)
     }
 
     fun gotoDetail(itemId: Int) {

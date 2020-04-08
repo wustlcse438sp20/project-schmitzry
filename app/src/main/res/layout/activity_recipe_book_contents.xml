@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activities.SearchResultActivity"
-    android:background="@color/Background">
+    tools:context=".activities.RecipeBookContentsActivity">
 
     <androidx.core.widget.ContentLoadingProgressBar
         android:layout_width="match_parent"
@@ -20,7 +19,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5dp"
-        android:text="Search Results"
+        android:id="@+id/bookTitle"
+        android:text="noname"
         android:textSize="24dp"
         android:gravity="center"
         android:textColor="@color/Brown"/>
@@ -36,7 +36,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/recipeSearchResultListContainer"
+        android:id="@+id/recipeListContainer"
         />
 
 </LinearLayout>

@@ -1,9 +1,9 @@
 package com.example.recipiebook.data
 
 data class RecipeIngredient(
-    val name: String,
-    val amount: String,
-    val unit: String
+    val name: String = "",
+    val amount: String = "",
+    val unit: String = ""
 )
 
 data class RecipeBook(
@@ -12,12 +12,29 @@ data class RecipeBook(
     val count: Int
 )
 
-data class RecipeBookRecipe(
-    val id: String,
-    val name: String,
-    val imageUrl: String,
-    val timeToCook: Int,
-    val webUrl: String,
-    val ingredients: String, // NOTE: This will be a CSV - name1,amount1,units1;name2,amount2,units2; for ease of use
-    val userNotes: String
+data class FirebaseRecipeBookRecipe(
+    val id: String = "",
+    val name: String = "",
+    val imageUrl: String = "",
+    val timeToCook: Int = 0,
+    val webUrl: String = "",
+    val ingredients: ArrayList<RecipeIngredient> = ArrayList(),
+    val userNotes: String = ""
 )
+
+data class FirebaseRecipeBook(
+    val name: String = "",
+    val recipes: ArrayList<FirebaseRecipeBookRecipe> = ArrayList()
+)
+
+data class RecipeBookRef(
+    val name: String = "",
+    val id: String = ""
+)
+
+data class UserData(
+    val books: ArrayList<RecipeBookRef> = ArrayList()
+)
+
+// Collection for UserData is "Users"
+// Collection for FirebaseRecipeBook is "Books"

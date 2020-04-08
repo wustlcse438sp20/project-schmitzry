@@ -11,76 +11,96 @@
         android:id="@+id/searchTextInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="20dp"
+        android:padding="15dp"
         android:hint="Search"
         android:textSize="18dp"
+        android:layout_marginHorizontal="10dp"
         android:textColor="@color/Brown"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="20dp"
+        android:padding="5dp"
         android:text="Filters"
+        android:textSize="24dp"
         android:gravity="center"
         android:textColor="@color/Brown"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="10dp"
+        android:background="@color/Green"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
+        android:textSize="18dp"
         android:gravity="center"
         android:text="Recipe Type:"
         android:textColor="@color/Brown"/>
 
-    <CheckBox
-        android:id="@+id/BreakfastFilter"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="5dp"
-        android:layout_gravity="center"
-        android:text="Breakfast"
-        android:textColor="@color/Brown"/>
+        android:gravity="center">
 
-    <CheckBox
-        android:id="@+id/LunchFilter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="5dp"
-        android:layout_gravity="center"
-        android:text="Lunch"
-        android:textColor="@color/Brown"/>
+        <CheckBox
+            android:id="@+id/paleoFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_gravity="center"
+            android:text="Paleo"
+            android:textColor="@color/Brown"/>
 
-    <CheckBox
-        android:id="@+id/DinnerFilter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="5dp"
-        android:layout_gravity="center"
-        android:text="Dinner"
-        android:textColor="@color/Brown"/>
+        <CheckBox
+            android:id="@+id/ketoFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_gravity="center"
+            android:text="Keto"
+            android:textColor="@color/Brown"/>
 
-    <CheckBox
-        android:id="@+id/SnackFilter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="5dp"
-        android:layout_gravity="center"
-        android:text="Snack"
-        android:textColor="@color/Brown"/>
+        <CheckBox
+            android:id="@+id/vegetarianFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_gravity="center"
+            android:text="Vegetarian"
+            android:textColor="@color/Brown"/>
+
+        <CheckBox
+            android:id="@+id/veganFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_gravity="center"
+            android:text="Vegan"
+            android:textColor="@color/Brown"/>
+
+    </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
+        android:textSize="18dp"
         android:layout_gravity="center"
         android:text="Ingredients to Include:"
         android:textColor="@color/Brown"/>
 
     <EditText
-        android:id="@+id/IncludeFilter"
-        android:layout_width="wrap_content"
+        android:id="@+id/includeFilter"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="5dp"
+        android:layout_marginHorizontal="10dp"
+        android:padding="15dp"
         android:layout_gravity="center"
         android:hint="Ingredient"
         android:textColor="@color/Brown"/>
@@ -89,18 +109,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
+        android:textSize="18dp"
         android:layout_gravity="center"
         android:text="Ingredients to Exclude:"
         android:textColor="@color/Brown"/>
 
     <EditText
-        android:id="@+id/ExcludeFilter"
-        android:layout_width="wrap_content"
+        android:id="@+id/excludeFilter"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="5dp"
+        android:layout_marginHorizontal="10dp"
+        android:padding="15dp"
         android:layout_gravity="center"
         android:hint="Ingredient"
         android:textColor="@color/Brown"/>
+
 
     <Button
         android:id="@+id/searchButton"

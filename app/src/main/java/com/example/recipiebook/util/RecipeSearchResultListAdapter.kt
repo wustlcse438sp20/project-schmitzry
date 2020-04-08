@@ -1,6 +1,7 @@
 package com.example.recipiebook.util
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
@@ -34,7 +35,11 @@ class RecipeSearchResultItemViewHolder(resolver: (Int) -> Unit, inflater: Layout
 
         println(recipe.image)
 
-        Picasso.get().load("https://spoonacular.com/recipeImages/${recipe.image}").into(image)
+        if (recipe.image != null) {
+            Picasso.get().load("https://spoonacular.com/recipeImages/${recipe.image}").into(image)
+        } else {
+            image.visibility = View.GONE
+        }
 
         button.setOnClickListener {
             resolver(recipe.id)

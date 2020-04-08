@@ -18,7 +18,7 @@ class SpoonacularViewModel (application: Application): AndroidViewModel(applicat
         spoonacularRepository.recipeDetailSearch(recipeDetailResponse, id)
     }
 
-    fun getRecipiesForQuery(query: String, diet: String = "", cuisine: String = "") {
-        spoonacularRepository.recipeSearchForTerm(recipeSearchResponse, query, diet, cuisine)
+    fun getRecipiesForQuery(query: String, diet: String = "", exclude: String = "", cuisine: String = "") {
+        spoonacularRepository.recipeSearchForTerm(recipeSearchResponse, query, diet, exclude, cuisine)
     }
 }

@@ -30,13 +30,35 @@ class SearchFragment : Fragment() {
 
         searchButton.setOnClickListener {
             val text = searchTextInput.text.toString()
+            val exclude = excludeFilter.text.toString()
 
-            // TODO cuisine and diet
+            // TODO include
+            val include = includeFilter.text.toString()
+
+            var dietFilter = ""
+
+            if (vegetarianFilter.isChecked) {
+                dietFilter += "vegetarian,"
+            }
+
+            if (veganFilter.isChecked) {
+                dietFilter += "vegan,"
+            }
+
+            if (ketoFilter.isChecked) {
+                dietFilter += "ketogenic,"
+            }
+
+            if (paleoFilter.isChecked) {
+                dietFilter += "paleo,"
+            }
 
             if (text != "") {
 
                 val i = Intent(activity, SearchResultActivity::class.java)
                 i.putExtra("query", text)
+                i.putExtra("diet", dietFilter)
+                i.putExtra("exclude", exclude)
                 startActivityForResult(i, INTENT_CODES.SEE_RECIPE_SEARCH_RESULT_INTENT.ordinal)
 
             } else {

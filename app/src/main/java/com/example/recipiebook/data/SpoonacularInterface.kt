@@ -9,5 +9,5 @@ interface SpoonacularInterface {
     suspend fun recipeDetailSearch(@Path("id") id: String, @Query("apiKey") key: String): Response<RecipeDetailResponse>
 
     @GET("recipes/search")
-    suspend fun recipeSearchForTerm(@Query("apiKey") key: String, @Query("query") query: String, @Query("diet") diet: String, @Query("cuisine") cuisine: String): Response<RecipeSearchResponse>
+    suspend fun recipeSearchForTerm(@Query("apiKey") key: String, @Query("query") query: String, @Query("diet") diet: String, @Query("excludeIngredients") exclude: String, @Query("cuisine") cuisine: String): Response<RecipeSearchResponse>
 }

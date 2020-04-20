@@ -15,7 +15,7 @@
             android:layout_height="wrap_content"
             style="@style/appButton"
             android:layout_weight="1"
-            android:text="New Book"
+            android:text="@string/newbook"
             android:layout_marginRight="5dp"/>
 
         <Button
@@ -25,7 +25,7 @@
             style="@style/appButton"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Logout"
+            android:text="@string/logout"
             android:layout_marginLeft="5dp"/>
 
     </LinearLayout>

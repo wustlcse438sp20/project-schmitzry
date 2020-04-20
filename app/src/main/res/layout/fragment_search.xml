@@ -13,7 +13,7 @@
         android:padding="5dp"
         android:textSize="12dp"
         android:gravity="left"
-        android:text="Search Term:"
+        android:text="@string/searchterm"
         android:textColor="@color/TextMain"/>
 
     <EditText
@@ -21,7 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/appInput"
-        android:hint="Search"
+        android:hint="@string/search"
         android:layout_marginHorizontal="10dp"
         android:layout_marginBottom="15dp"/>
 
@@ -29,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5dp"
-        android:text="Filters"
+        android:text="@string/filters"
         android:textSize="24dp"
         android:gravity="center"
         android:textColor="@color/TextMain"
@@ -41,7 +41,7 @@
         android:padding="5dp"
         android:textSize="12dp"
         android:gravity="left"
-        android:text="Recipe Type:"
+        android:text="@string/recipetype"
         android:textColor="@color/TextMain"/>
 
     <LinearLayout
@@ -56,7 +56,7 @@
             android:layout_height="wrap_content"
             android:padding="5dp"
             android:layout_gravity="center"
-            android:text="Paleo"
+            android:text="@string/paleo"
             android:buttonTint="@color/AssetAccentColor"
             android:textColor="@color/TextMain"/>
 
@@ -66,7 +66,7 @@
             android:layout_height="wrap_content"
             android:padding="5dp"
             android:layout_gravity="center"
-            android:text="Keto"
+            android:text="@string/keto"
             android:buttonTint="@color/AssetAccentColor"
             android:textColor="@color/TextMain"/>
 
@@ -76,7 +76,7 @@
             android:layout_height="wrap_content"
             android:padding="5dp"
             android:layout_gravity="center"
-            android:text="Vegetarian"
+            android:text="@string/vegetarian"
             android:buttonTint="@color/AssetAccentColor"
             android:textColor="@color/TextMain"/>
 
@@ -86,7 +86,7 @@
             android:layout_height="wrap_content"
             android:padding="5dp"
             android:layout_gravity="center"
-            android:text="Vegan"
+            android:text="@string/vegan"
             android:buttonTint="@color/AssetAccentColor"
             android:textColor="@color/TextMain"/>
 
@@ -98,7 +98,7 @@
         android:padding="5dp"
         android:textSize="12dp"
         android:gravity="left"
-        android:text="Filter by Cuisine:"
+        android:text="@string/filterbycuisine"
         android:textColor="@color/TextMain"/>
 
     <LinearLayout
@@ -113,7 +113,7 @@
             android:layout_height="wrap_content"
             android:padding="5dp"
             android:layout_gravity="center"
-            android:text="Italian"
+            android:text="@string/italian"
             android:buttonTint="@color/AssetAccentColor"
             android:textColor="@color/TextMain"/>
 
@@ -123,7 +123,7 @@
             android:layout_height="wrap_content"
             android:padding="5dp"
             android:layout_gravity="center"
-            android:text="American"
+            android:text="@string/american"
             android:buttonTint="@color/AssetAccentColor"
             android:textColor="@color/TextMain"/>
 
@@ -133,7 +133,7 @@
             android:layout_height="wrap_content"
             android:padding="5dp"
             android:layout_gravity="center"
-            android:text="French"
+            android:text="@string/french"
             android:buttonTint="@color/AssetAccentColor"
             android:textColor="@color/TextMain"/>
 
@@ -143,7 +143,7 @@
             android:layout_height="wrap_content"
             android:padding="5dp"
             android:layout_gravity="center"
-            android:text="Latin American"
+            android:text="@string/latinamerican"
             android:buttonTint="@color/AssetAccentColor"
             android:textColor="@color/TextMain"/>
 
@@ -155,7 +155,7 @@
         android:padding="5dp"
         android:textSize="12dp"
         android:gravity="left"
-        android:text="Ingredients to Exclude:"
+        android:text="@string/exclude"
         android:textColor="@color/TextMain"/>
 
     <EditText
@@ -164,7 +164,7 @@
         android:layout_height="wrap_content"
         style="@style/appInput"
         android:layout_marginHorizontal="10dp"
-        android:hint="Ingredient"
+        android:hint="@string/ingredient"
         />
 
     <Button
@@ -173,7 +173,7 @@
         android:layout_height="wrap_content"
         style="@style/appButton"
         android:layout_margin="20dp"
-        android:text="Search"
+        android:text="@string/search"
         />
 
     <!--

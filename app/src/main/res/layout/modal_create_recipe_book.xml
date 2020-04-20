@@ -9,14 +9,14 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:padding="20dp"
-        android:text="Create Recipe Book"
+        android:text="@string/createrecipebook"
         android:textSize="24dp"
         android:textColor="@color/TextMain"/>
 
     <EditText
         android:id="@+id/newBookName"
         style="@style/appInput"
-        android:hint="recipe book name"
+        android:hint="@string/bookname"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -24,7 +24,7 @@
 
     <Button
         android:id="@+id/createBookButton"
-        android:text="Create"
+        android:text="@string/create"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/appButton"/>

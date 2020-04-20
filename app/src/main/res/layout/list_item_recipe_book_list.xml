@@ -8,7 +8,7 @@
         android:id="@+id/name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="name"
+        android:text="@string/placeholder"
         android:layout_weight="1"
         android:textSize="20dp"
         android:textColor="@color/TextMain"/>
@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         style="@style/appButton"
-        android:text="Select"
+        android:text="@string/select"
         android:gravity="center"/>
 
 </LinearLayout>

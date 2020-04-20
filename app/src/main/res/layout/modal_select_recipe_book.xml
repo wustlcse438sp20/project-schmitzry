@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:padding="20dp"
-        android:text="Select Recipe Book"
+        android:text="@string/selectbook"
         android:textSize="24dp"
         android:textColor="@color/TextMain"/>
 

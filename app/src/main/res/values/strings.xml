@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">recipebook</string>
+    <string name="app_name">RecipeBook</string>
 
     <!-- TODO: Remove strings we aren't using -->
     <string name="placeholder">Placeholder</string>
@@ -10,7 +10,36 @@
     <string name="signup">Sign Up</string>
     <string name="username">Username</string>
     <string name="ok">Okay</string>
+    <string name="cooktime">Cook Time: </string>
+    <string name="minutes">minutes</string>
+    <string name="url">Go to Recipe URL</string>
+    <string name="addtobook">Add to a Recipe Book</string>
+    <string name="notes">Notes…</string>
+    <string name="update">Update Saved Recipe Notes</string>
+    <string name="results">Search Results</string>
+    <string name="endresults">End of Search Results</string>
+    <string name="newbook">New Book</string>
+    <string name="searchterm">Search Term: </string>
+    <string name="search">Search</string>
+    <string name="filters">Filters</string>
+    <string name="recipetype">Recipe Type: </string>
+    <string name="paleo">Paleo</string>
+    <string name="keto">Keto</string>
+    <string name="vegetarian">Vegetarian</string>
+    <string name="vegan">Vegan</string>
+    <string name="filterbycuisine">Filter by Cuisine: </string>
+    <string name="italian">Italian</string>
+    <string name="american">American</string>
+    <string name="french">French</string>
+    <string name="latinamerican">Latin American</string>
+    <string name="exclude">Ingredients to Exclude: </string>
+    <string name="ingredient">Ingredient</string>
+    <string name="select">Select</string>
+    <string name="view">View</string>
+    <string name="gotorecipe">Go to Recipe</string>
+    <string name="createrecipebook">Create Recipe Book</string>
+    <string name="bookname">Recipe Book Name</string>
+    <string name="create">Create</string>
+    <string name="selectbook">Select Recipe Book</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

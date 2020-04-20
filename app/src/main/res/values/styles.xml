@@ -3,8 +3,60 @@
     <!--Base application theme.-->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/Background</item>
-        <item name="colorPrimaryDark">@color/Green</item>
-        <item name="colorAccent">@color/Brown</item>
+        <item name="colorPrimaryDark">@color/AssetAccentColor</item>
+        <item name="colorAccent">@color/AssetAccentColor</item>
     </style>
+
+    <style name="appButton">
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:background">@color/ButtonBackground</item>
+        <item name="android:textColor">@color/TextMain</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:padding">5dp</item>
+    </style>
+
+    <style name="appInput">
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:padding">15dp</item>
+        <item name="android:textColor">@color/TextMain</item>
+        <item name="android:textColorHint">@color/TextSecondary</item>
+        <item name="android:backgroundTint">@color/AssetAccentColor</item>
+    </style>
+
+    <style name="appInputMultiline">
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:padding">3dp</item>
+        <item name="android:textColor">@color/TextMain</item>
+        <item name="android:textColorHint">@color/TextSecondary</item>
+        <item name="android:backgroundTint">@color/AssetAccentColor</item>
+    </style>
+
+    <!--
+    <EditText
+        android:id="@+id/excludeFilter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textCursorDrawable="@null"
+        android:layout_marginHorizontal="10dp"
+        android:padding="15dp"
+        android:layout_gravity="center"
+        android:hint="Ingredient"
+        android:textColorHint="@color/TextSecondary"
+        android:backgroundTint="@color/AssetAccentColor"
+        android:textColor="@color/TextMain"/>
+    -->
+    <!--
+    <Button
+        android:id="@+id/searchButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_margin="20dp"
+        android:text="Search"
+        android:textSize="18dp"
+        android:fontFamily="sans-serif-light"
+        android:background="@color/ButtonBackground"
+        android:textColor="@color/TextMain"/>
+        -->
 
 </resources>

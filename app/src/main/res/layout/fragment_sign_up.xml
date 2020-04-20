@@ -20,39 +20,36 @@
             android:text="@string/signup"
             android:gravity="center"
             android:textSize="24dp"
-            android:textColor="@color/Brown"/>
+            android:textColor="@color/TextMain"/>
 
         <EditText
             android:id="@+id/signUpEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            style="@style/appInput"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="20dp"
-            android:hint="@string/email"
-            android:textSize="18dp"
-            android:textColor="@color/Brown"/>
+            android:hint="@string/email"/>
 
         <EditText
             android:id="@+id/signUpPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            style="@style/appInput"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginBottom="20dp"
             android:inputType="textPassword"
-            android:hint="@string/password"
-            android:textSize="18dp"
-            android:textColor="@color/Brown"/>
+            android:hint="@string/password"/>
 
         <Button
             android:id="@+id/signUpButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:text="@string/signup"
-            android:background="@color/Green"
-            android:textColor="@color/LightYellow"/>
+            style="@style/appButton"
+            android:text="@string/signup"/>
 
     </LinearLayout>
 

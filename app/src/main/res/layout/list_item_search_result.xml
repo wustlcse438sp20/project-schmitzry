@@ -4,46 +4,65 @@
     android:layout_height="wrap_content" android:padding="15dp" android:layout_gravity="center"
     android:background="@color/Background">
 
-    <ImageView
-        android:id="@+id/recipeImage"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:scaleType="fitCenter"/>
-
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="5dp"
-        android:text="name"
-        android:gravity="center"
-        android:textSize="24dp"
-        android:textColor="@color/Brown"/>
-
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_gravity="center"
-        android:padding="5dp">
+        android:layout_marginBottom="10dp"
+        >
 
-        <TextView
+        <ImageView
+            android:id="@+id/recipeImage"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:textSize="18dp"
-            android:text="Cook Time: "
-            android:textColor="@color/Brown"/>
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"/>
 
-        <TextView
-            android:id="@+id/cookTime"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:text="cook time (min)"
-            android:gravity="center"
-            android:textSize="18dp"
-            android:textColor="@color/Brown"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:orientation="vertical"
+            android:layout_marginLeft="5dp"
+            >
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="name"
+                android:gravity="left"
+                android:textSize="20dp"
+                android:textColor="@color/TextMain"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="left"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:textSize="15dp"
+                    android:text="Cook Time: "
+                    android:textColor="@color/TextMain"/>
+
+                <TextView
+                    android:id="@+id/cookTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="cook time (min)"
+                    android:gravity="center"
+                    android:textSize="15dp"
+                    android:textColor="@color/TextMain"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
 
     </LinearLayout>
 
@@ -51,18 +70,14 @@
         android:id="@+id/viewRecipeButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="5dp"
+        style="@style/appButton"
         android:text="go to recipe"
-        android:gravity="center"
-        android:textSize="24dp"
-        android:fontFamily="sans-serif-light"
-        android:background="@color/Green"
-        android:textColor="@color/LightYellow"/>
+        android:gravity="center"/>
 
     <View
         android:layout_width="match_parent"
         android:layout_marginTop="10dp"
         android:layout_height="1dp"
-        android:background="@color/Green"/>
+        android:background="@color/AssetAccentColor"/>
 
 </LinearLayout>

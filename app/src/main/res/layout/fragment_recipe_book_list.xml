@@ -13,20 +13,20 @@
             android:id="@+id/createBook"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            style="@style/appButton"
             android:layout_weight="1"
             android:text="New Book"
-            android:background="@color/Green"
-            android:textColor="@color/LightYellow"/>
+            android:layout_marginRight="5dp"/>
 
         <Button
             android:id="@+id/logout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            style="@style/appButton"
             android:layout_weight="1"
             android:gravity="center"
             android:text="Logout"
-            android:background="@color/Green"
-            android:textColor="@color/LightYellow"/>
+            android:layout_marginLeft="5dp"/>
 
     </LinearLayout>
 

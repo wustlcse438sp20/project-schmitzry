@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recipiebook.R
-import com.example.recipiebook.data.SpoonacularIngredient
+import com.example.recipiebook.data.RecipeIngredient
 
 class RecipeIngredientListViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
     RecyclerView.ViewHolder(inflater.inflate(R.layout.list_item_ingredient_list, parent, false)) {
@@ -21,12 +21,14 @@ class RecipeIngredientListViewHolder(inflater: LayoutInflater, parent: ViewGroup
     }
 
     //TODO 1.0 and already has s
-    fun bind(recipe: SpoonacularIngredient) {
+    fun bind(recipe: RecipeIngredient) {
         title.text = recipe.name.capitalize()
-        if (recipe.amount == "1" || recipe.unit == "") {
-            amount.text = "${recipe.amount} ${recipe.unit}"
+        val amt = String.format("%.2f", recipe.amount.toDouble())
+        if (amt.toDouble() <= 1.0 || recipe.unit == "" || recipe.unit.last() == 's') {
+
+            amount.text = "${amt} ${recipe.unit}"
         } else {
-            amount.text = "${recipe.amount} ${recipe.unit}s"
+            amount.text = "${amt} ${recipe.unit}s"
         }
 
     }
@@ -34,9 +36,9 @@ class RecipeIngredientListViewHolder(inflater: LayoutInflater, parent: ViewGroup
 }
 
 //create the listener for the recycler view
-class RecipeIngredientListAdapter(private val list: ArrayList<SpoonacularIngredient>?)
+class RecipeIngredientListAdapter(private val list: ArrayList<RecipeIngredient>?)
     : RecyclerView.Adapter<RecipeIngredientListViewHolder>() {
-    private var ingredients : ArrayList<SpoonacularIngredient>? = list
+    private var ingredients : ArrayList<RecipeIngredient>? = list
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeIngredientListViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         return RecipeIngredientListViewHolder(inflater, parent)
@@ -44,7 +46,7 @@ class RecipeIngredientListAdapter(private val list: ArrayList<SpoonacularIngredi
 
     //bind the object
     override fun onBindViewHolder(holder: RecipeIngredientListViewHolder, position: Int) {
-        val event: SpoonacularIngredient = ingredients!!.get(position)
+        val event: RecipeIngredient = ingredients!!.get(position)
         holder.bind(event)
     }
 

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/Background"
     tools:context=".activities.RecipeBookContentsActivity">
 
     <androidx.core.widget.ContentLoadingProgressBar
@@ -23,7 +24,7 @@
         android:text="noname"
         android:textSize="24dp"
         android:gravity="center"
-        android:textColor="@color/Brown"/>
+        android:textColor="@color/TextMain"/>
 
     <View
         android:layout_width="match_parent"
@@ -31,7 +32,7 @@
         android:layout_marginBottom="10dp"
         android:layout_height="1dp"
         android:layout_marginHorizontal="10dp"
-        android:background="@color/Green"/>
+        android:background="@color/AssetAccentColor"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"

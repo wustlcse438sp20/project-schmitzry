@@ -9,7 +9,9 @@ import android.widget.Toast
 import com.example.recipiebook.activities.MainActivity
 
 import com.example.recipiebook.R
+import com.example.recipiebook.data.UserData
 import com.google.firebase.auth.UserProfileChangeRequest
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_sign_up.*
 
 class SignUpFragment : Fragment() {
@@ -39,6 +41,8 @@ class SignUpFragment : Fragment() {
 
        // val username = signUpName.text.toString()
 
+        // TODO make new book
+
         if (password == "" || email == "") {
             Toast.makeText(
                 (activity!! as MainActivity), "One of your email, username, or password was blank. Please enter a valid username / email / password",
@@ -53,13 +57,11 @@ class SignUpFragment : Fragment() {
 
                     println("Created user with email")
 
-                    //val profileUpdate = UserProfileChangeRequest.Builder().setDisplayName(username).build()
+                    val uData = UserData()
 
-                    //(activity!! as MainActivity).mAuth!!.currentUser!!.updateProfile(profileUpdate).addOnCompleteListener {
-                        //if (task.isSuccessful) {
-                            (activity!! as MainActivity).launchApp()
-                        //}
-                    //}
+                    (activity!! as MainActivity).db.collection("Users").document((activity!! as MainActivity).mAuth!!.currentUser!!.uid).set(uData)
+
+                    (activity!! as MainActivity).launchApp()
 
                 } else {
 

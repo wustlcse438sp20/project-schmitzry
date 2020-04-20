@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/LightYellow">
+    android:background="@color/BackgroundSecondary">
 
     <TextView
         android:layout_width="match_parent"
@@ -11,10 +11,11 @@
         android:padding="20dp"
         android:text="Create Recipe Book"
         android:textSize="24dp"
-        android:textColor="@color/Brown"/>
+        android:textColor="@color/TextMain"/>
 
     <EditText
         android:id="@+id/newBookName"
+        style="@style/appInput"
         android:hint="recipe book name"
         android:gravity="center"
         android:layout_width="match_parent"
@@ -25,6 +26,7 @@
         android:id="@+id/createBookButton"
         android:text="Create"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        style="@style/appButton"/>
 
 </LinearLayout>

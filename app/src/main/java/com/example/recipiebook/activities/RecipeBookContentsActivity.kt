@@ -79,7 +79,9 @@ class RecipeBookContentsActivity : AppCompatActivity() {
 
     fun gotoRecipe(id: String) {
         val i = Intent(this, RecipeDetailActivity::class.java)
-        i.putExtra("bookId", id)
+        i.putExtra("bookId", bookId)
+        i.putExtra("recipeId", id)
+        i.putExtra("saved", "1")
         startActivityForResult(i, 0)
     }
 }

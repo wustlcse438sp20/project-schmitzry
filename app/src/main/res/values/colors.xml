@@ -1,8 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="Background">#FBDD9D</color>
-    <color name="DarkYellow">#E8B12D</color>
-    <color name="Green">#4F4E28</color>
-    <color name="Brown">#925F17</color>
-    <color name="LightYellow">#E9BF59</color>
+    <!--
+    <color name="Background">#65CCB8</color>
+    <color name="BackgroundSecondary">#57BA98</color>
+    <color name="TextMain">#182628</color>
+    <color name="TextSecondary">#515658</color>
+    <color name="TextButton">#EEEEEE</color>
+    <color name="ButtonBackground">#358555</color>
+    <color name="AssetAccentColor">#358555</color>
+    <color name="HeaderColor">#243700</color>
+    <color name="DarkYellow">#3B1B00</color>
+    <color name="Green">#1F2605</color>
+    <color name="Brown">#AB6328</color>
+    <color name="LightYellow">#D6CE15</color>
+    -->
+    <color name="Background">#474B4F</color>
+    <color name="BackgroundSecondary">#222629</color>
+    <color name="TextMain">#FFFFFF</color>
+    <color name="TextSecondary">#F2F2F2</color>
+    <color name="TextButton">#FFFFFF</color>
+    <color name="ButtonBackground">#61892F</color>
+    <color name="AssetAccentColor">#86C232</color>
+    <color name="HeaderColor">#243700</color>
+    <color name="DarkYellow">#3B1B00</color>
+    <color name="Green">#1F2605</color>
+    <color name="Brown">#AB6328</color>
+    <color name="LightYellow">#D6CE15</color>
 </resources>

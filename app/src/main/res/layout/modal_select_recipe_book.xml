@@ -2,15 +2,22 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/LightYellow">
+    android:background="@color/BackgroundSecondary">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:padding="20dp"
-        android:text="Select a Book"
+        android:text="Select Recipe Book"
         android:textSize="24dp"
-        android:textColor="@color/Brown"/>
+        android:textColor="@color/TextMain"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:id="@+id/recipeBookListContainer"
+        />
 
 </LinearLayout>

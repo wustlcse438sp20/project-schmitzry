@@ -7,15 +7,23 @@
     tools:context=".fragments.SearchFragment"
     android:background="@color/Background">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:textSize="12dp"
+        android:gravity="left"
+        android:text="Search Term:"
+        android:textColor="@color/TextMain"/>
+
     <EditText
         android:id="@+id/searchTextInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="15dp"
+        style="@style/appInput"
         android:hint="Search"
-        android:textSize="18dp"
         android:layout_marginHorizontal="10dp"
-        android:textColor="@color/Brown"/>
+        android:layout_marginBottom="15dp"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -24,28 +32,22 @@
         android:text="Filters"
         android:textSize="24dp"
         android:gravity="center"
-        android:textColor="@color/Brown"/>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_height="1dp"
-        android:layout_marginHorizontal="10dp"
-        android:background="@color/Green"/>
+        android:textColor="@color/TextMain"
+        android:background="@color/BackgroundSecondary"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:textSize="18dp"
-        android:gravity="center"
+        android:padding="5dp"
+        android:textSize="12dp"
+        android:gravity="left"
         android:text="Recipe Type:"
-        android:textColor="@color/Brown"/>
+        android:textColor="@color/TextMain"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
         android:gravity="center">
 
         <CheckBox
@@ -55,7 +57,8 @@
             android:padding="5dp"
             android:layout_gravity="center"
             android:text="Paleo"
-            android:textColor="@color/Brown"/>
+            android:buttonTint="@color/AssetAccentColor"
+            android:textColor="@color/TextMain"/>
 
         <CheckBox
             android:id="@+id/ketoFilter"
@@ -64,7 +67,8 @@
             android:padding="5dp"
             android:layout_gravity="center"
             android:text="Keto"
-            android:textColor="@color/Brown"/>
+            android:buttonTint="@color/AssetAccentColor"
+            android:textColor="@color/TextMain"/>
 
         <CheckBox
             android:id="@+id/vegetarianFilter"
@@ -73,7 +77,8 @@
             android:padding="5dp"
             android:layout_gravity="center"
             android:text="Vegetarian"
-            android:textColor="@color/Brown"/>
+            android:buttonTint="@color/AssetAccentColor"
+            android:textColor="@color/TextMain"/>
 
         <CheckBox
             android:id="@+id/veganFilter"
@@ -82,58 +87,94 @@
             android:padding="5dp"
             android:layout_gravity="center"
             android:text="Vegan"
-            android:textColor="@color/Brown"/>
+            android:buttonTint="@color/AssetAccentColor"
+            android:textColor="@color/TextMain"/>
 
     </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:textSize="18dp"
-        android:layout_gravity="center"
-        android:text="Ingredients to Include:"
-        android:textColor="@color/Brown"/>
+        android:padding="5dp"
+        android:textSize="12dp"
+        android:gravity="left"
+        android:text="Filter by Cuisine:"
+        android:textColor="@color/TextMain"/>
 
-    <EditText
-        android:id="@+id/includeFilter"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="10dp"
-        android:padding="15dp"
-        android:layout_gravity="center"
-        android:hint="Ingredient"
-        android:textColor="@color/Brown"/>
+        android:layout_marginBottom="15dp"
+        android:gravity="center">
+
+        <CheckBox
+            android:id="@+id/italianFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_gravity="center"
+            android:text="Italian"
+            android:buttonTint="@color/AssetAccentColor"
+            android:textColor="@color/TextMain"/>
+
+        <CheckBox
+            android:id="@+id/americanFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_gravity="center"
+            android:text="American"
+            android:buttonTint="@color/AssetAccentColor"
+            android:textColor="@color/TextMain"/>
+
+        <CheckBox
+            android:id="@+id/frenchFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_gravity="center"
+            android:text="French"
+            android:buttonTint="@color/AssetAccentColor"
+            android:textColor="@color/TextMain"/>
+
+        <CheckBox
+            android:id="@+id/latinAmericanFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_gravity="center"
+            android:text="Latin American"
+            android:buttonTint="@color/AssetAccentColor"
+            android:textColor="@color/TextMain"/>
+
+    </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:textSize="18dp"
-        android:layout_gravity="center"
+        android:padding="5dp"
+        android:textSize="12dp"
+        android:gravity="left"
         android:text="Ingredients to Exclude:"
-        android:textColor="@color/Brown"/>
+        android:textColor="@color/TextMain"/>
 
     <EditText
         android:id="@+id/excludeFilter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        style="@style/appInput"
         android:layout_marginHorizontal="10dp"
-        android:padding="15dp"
-        android:layout_gravity="center"
         android:hint="Ingredient"
-        android:textColor="@color/Brown"/>
-
+        />
 
     <Button
         android:id="@+id/searchButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="5dp"
+        style="@style/appButton"
         android:layout_margin="20dp"
         android:text="Search"
-        android:background="@color/Green"
-        android:textColor="@color/LightYellow"/>
+        />
 
     <!--
     TODO: Support:

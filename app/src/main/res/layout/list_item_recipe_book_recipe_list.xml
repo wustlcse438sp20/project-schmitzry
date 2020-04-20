@@ -1,26 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal" android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="5dp"
+    android:background="@color/Background">
 
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="name"
-        android:layout_weight="1"
-        android:textSize="20dp"
-        android:textColor="@color/Brown"/>
+        android:paddingRight="5dp"
+        android:paddingLeft="5dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="name"
+            android:layout_weight="2"
+            android:scrollHorizontally="true"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textSize="20dp"
+            android:textColor="@color/TextMain"/>
 
-    <Button
-        android:id="@+id/viewRecipeButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="View"
-        android:gravity="center"
-        android:textSize="20dp"
-        android:background="@color/Green"
-        android:textColor="@color/LightYellow"/>
+        <Button
+            android:id="@+id/viewRecipeButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="@style/appButton"
+            android:text="View"
+            android:gravity="center"/>
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_height="1dp"
+        android:background="@color/AssetAccentColor"/>
 
 </LinearLayout>

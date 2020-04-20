@@ -10,9 +10,13 @@ import com.example.recipiebook.util.RecipeIngredientListAdapter
 import com.example.recipiebook.util.RecipeSearchResultListAdapter
 import android.content.Intent
 import android.net.Uri
+import android.view.LayoutInflater
 import android.view.View
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.ViewModelProvider
 import com.example.recipiebook.data.*
+import com.example.recipiebook.util.RecipeBookListAdapter
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.squareup.picasso.Picasso
@@ -24,27 +28,38 @@ import kotlinx.android.synthetic.main.activity_search_result.*
 
 class RecipeDetailActivity : AppCompatActivity() {
 
-    lateinit var viewModel: SpoonacularViewModel
+    private lateinit var viewModel: SpoonacularViewModel
 
-    lateinit var recipeItem: RecipeDetailResponse
+    private lateinit var recipeItem: RecipeDetailResponse
 
-    var ingredientList: ArrayList<SpoonacularIngredient> = ArrayList()
+    private var ingredientList: ArrayList<RecipeIngredient> = ArrayList()
 
-    var itemId = ""
+    private var itemId = ""
 
-    var isSaved = false
+    private var isSaved = false
 
-    val db = FirebaseFirestore.getInstance()
+    private var savedBookId = ""
+    private var savedRecipeId = ""
+
+    private var addToBookDialog: AlertDialog? = null
+
+    private val db = FirebaseFirestore.getInstance()
 
     var mAuth = FirebaseAuth.getInstance()
 
     var bookList: ArrayList<RecipeBookRef> = ArrayList()
+
+    var bookData: FirebaseRecipeBook = FirebaseRecipeBook()
+
+    var currRecipe: FirebaseRecipeBookRecipe = FirebaseRecipeBookRecipe()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recipe_detail)
         itemId = intent!!.extras!!.getString("id").toString()
         isSaved = intent!!.extras!!.getString("saved") != null
+        savedBookId = intent!!.extras!!.getString("bookId").toString()
+        savedRecipeId = intent!!.extras!!.getString("recipeId").toString()
 
         loadingBar.show()
     }
@@ -62,7 +77,7 @@ class RecipeDetailActivity : AppCompatActivity() {
 
             // get from spoonacular
             viewModel!!.recipeDetailResponse.observe(this, Observer {
-                println(it.toString())
+
                 recipeItem = it
 
                 if (recipeItem.image != null) {
@@ -89,25 +104,126 @@ class RecipeDetailActivity : AppCompatActivity() {
                     performAddToBook()
                 }
 
+                recipeNotes.visibility = View.GONE
+                updateRecipeNotes.visibility = View.GONE
+
                 loadingBar.hide()
 
             })
 
-            println(itemId)
-
             viewModel.getRecipeDetail(itemId)
         } else {
             // get from FireStore
+            db.collection("Books").document(savedBookId).get().addOnSuccessListener { item ->
+
+                val res = item.toObject(FirebaseRecipeBook::class.java)
+
+                println(res)
+
+                bookData = res!!
+
+                println("searching recipes...")
+
+                for (item in bookData.recipes) {
+                    if (item.id == savedRecipeId) {
+                        println(item)
+                        // found recipe!
+                        currRecipe = item
+                    }
+                }
+
+                // Remove so when we add it will be the modified recipe
+                bookData.recipes.remove(currRecipe)
+
+                if (currRecipe.imageUrl != null) {
+                    Picasso.get().load(currRecipe.imageUrl).into(recipeImage)
+                } else {
+                    recipeImage.visibility = View.GONE
+                }
+
+                ingredientList.addAll(currRecipe.ingredients)
+
+                ingredientAdapter.notifyDataSetChanged()
+
+                recipeTitle.text = currRecipe.name
+
+                cookTime.text = currRecipe.timeToCook.toString()
+
+                gotoRecipeOnline.setOnClickListener {
+                    val uri = Uri.parse(currRecipe.webUrl)
+                    val intent = Intent(Intent.ACTION_VIEW, uri)
+                    startActivity(intent)
+                }
+
+                addToRecipeBook.visibility = View.GONE
+
+                recipeNotes.setText(currRecipe.userNotes)
+
+                updateRecipeNotes.setOnClickListener {
+                    val notes = recipeNotes.text.toString()
+
+                    currRecipe = currRecipe.copy(userNotes = notes)
+
+                    bookData.recipes.add(currRecipe)
+
+                    db.collection("Books").document(savedBookId).set(bookData).addOnSuccessListener {
+                        Toast.makeText(
+                            this, "Notes Saved",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                }
+
+                loadingBar.hide()
+
+            }
         }
 
 
     }
 
+    fun addRecipeToBook(bookId: String) {
+        db.collection("Books").document(bookId).get().addOnSuccessListener { item ->
+
+            val res = item.toObject(FirebaseRecipeBook::class.java)
+
+            var bookDetail = res!!
+
+            val newRecipe = FirebaseRecipeBookRecipe(id=recipeItem.id.toString(), name=recipeItem.title, imageUrl = recipeItem.image, timeToCook = recipeItem.readyInMinutes, webUrl = recipeItem.sourceUrl)
+
+            for (item in recipeItem.extendedIngredients) {
+                newRecipe.ingredients.add(RecipeIngredient(name=item.name, amount = item.amount, unit = item.unit))
+            }
+
+            bookDetail.recipes.add(newRecipe)
+
+            db.collection("Books").document(bookId).set(bookDetail).addOnSuccessListener {
+                addToBookDialog?.dismiss()
+            }
+
+        }
+    }
+
     fun performAddToBook() {
         if (isSaved) {
-            // TODO toast cannot add when already saved
+            Toast.makeText(
+                this, "Cannot add recipe to book that is already in a book",
+                Toast.LENGTH_SHORT
+            ).show()
         } else {
             // TODO add modal
+
+            val dialogView = LayoutInflater.from(this).inflate(R.layout.modal_select_recipe_book, null)
+
+            var bookAdapter = RecipeBookListAdapter(::addRecipeToBook, bookList)
+            dialogView.findViewById<RecyclerView>(R.id.recipeBookListContainer).adapter = bookAdapter
+            dialogView.findViewById<RecyclerView>(R.id.recipeBookListContainer).layoutManager = LinearLayoutManager(this)
+
+            val mBuilder = AlertDialog.Builder(this)
+                .setView(dialogView)
+            addToBookDialog = mBuilder.show()
+
+
             db.collection("Users").document(mAuth.currentUser!!.uid).get().addOnSuccessListener { item ->
 
                 val res = item.toObject(UserData::class.java)
@@ -120,46 +236,10 @@ class RecipeDetailActivity : AppCompatActivity() {
                     bookList.add(b)
                 }
 
-                //resultListAdapter.notifyDataSetChanged()
-                // TODO pop modal
+                bookAdapter.notifyDataSetChanged()
 
-                // tODO move to add handlers
-                val selectedBook = bookList[0]
-
-                db.collection("Books").document(selectedBook.id).get().addOnSuccessListener { item ->
-
-                    println(item.data)
-
-                    val res = item.toObject(FirebaseRecipeBook::class.java)
-
-                    println(res)
-
-                    var bookDetail = res!!
-                    /*
-
-                    data class FirebaseRecipeBookRecipe(
-                        val id: String = "",
-                        val name: String = "",
-                        val imageUrl: String = "",
-                        val timeToCook: Int = 0,
-                        val webUrl: String = "",
-                        val ingredients: ArrayList<RecipeIngredient> = ArrayList(),
-                        val userNotes: String = ""
-                    )
-
-                     */
-
-                    val newRecipe = FirebaseRecipeBookRecipe(id=recipeItem.id.toString(), name=recipeItem.title, imageUrl = recipeItem.image, timeToCook = recipeItem.readyInMinutes, webUrl = recipeItem.sourceUrl)
-
-                    for (item in recipeItem.extendedIngredients) {
-                        newRecipe.ingredients.add(RecipeIngredient(name=item.name, amount = item.amount, unit = item.unit))
-                    }
-
-                    bookDetail.recipes.add(newRecipe)
-
-                    db.collection("Books").document(selectedBook.id).set(bookDetail)
-
-                }
+                // TODO move to add handlers
+                //val selectedBook = bookList[0]
 
             }
         }

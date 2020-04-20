@@ -12,7 +12,7 @@ data class RecipeDetailResponse(
     val image: String,
     val readyInMinutes: Int,
     val sourceUrl: String,
-    val extendedIngredients: List<SpoonacularIngredient>
+    val extendedIngredients: List<RecipeIngredient>
 )
 
 data class RecipeSearchItem(

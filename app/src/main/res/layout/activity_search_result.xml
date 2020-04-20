@@ -19,24 +19,33 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="5dp"
+        android:padding="10dp"
         android:text="Search Results"
         android:textSize="24dp"
         android:gravity="center"
-        android:textColor="@color/Brown"/>
+        android:textColor="@color/TextMain"
+        android:background="@color/BackgroundSecondary"/>
 
     <View
         android:layout_width="match_parent"
-        android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:layout_height="1dp"
-        android:layout_marginHorizontal="10dp"
-        android:background="@color/Green"/>
+        android:background="@color/AssetAccentColor"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/recipeSearchResultListContainer"
         />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:text="End of Search Results"
+        android:textSize="14dp"
+        android:gravity="center"
+        android:textColor="@color/TextSecondary"
+        android:background="@color/BackgroundSecondary"/>
 
 </LinearLayout>

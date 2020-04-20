@@ -32,8 +32,23 @@ class SearchFragment : Fragment() {
             val text = searchTextInput.text.toString()
             val exclude = excludeFilter.text.toString()
 
-            // TODO include
-            val include = includeFilter.text.toString()
+            var cuisineFilter = ""
+
+            if (italianFilter.isChecked) {
+                cuisineFilter += "italian,"
+            }
+
+            if (americanFilter.isChecked) {
+                cuisineFilter += "american,"
+            }
+
+            if (frenchFilter.isChecked) {
+                cuisineFilter += "french,"
+            }
+
+            if (latinAmericanFilter.isChecked) {
+                cuisineFilter += "latinAmerican,"
+            }
 
             var dietFilter = ""
 
@@ -57,6 +72,7 @@ class SearchFragment : Fragment() {
 
                 val i = Intent(activity, SearchResultActivity::class.java)
                 i.putExtra("query", text)
+                i.putExtra("cuisine", cuisineFilter)
                 i.putExtra("diet", dietFilter)
                 i.putExtra("exclude", exclude)
                 startActivityForResult(i, INTENT_CODES.SEE_RECIPE_SEARCH_RESULT_INTENT.ordinal)

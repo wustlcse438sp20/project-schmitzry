@@ -14,7 +14,6 @@ class SpoonacularViewModel (application: Application): AndroidViewModel(applicat
 
 
     fun getRecipeDetail(id: String) {
-        println("getting with id ${id}")
         spoonacularRepository.recipeDetailSearch(recipeDetailResponse, id)
     }
 

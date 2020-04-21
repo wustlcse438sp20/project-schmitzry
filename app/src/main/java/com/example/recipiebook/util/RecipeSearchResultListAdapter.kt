@@ -33,8 +33,6 @@ class RecipeSearchResultItemViewHolder(resolver: (Int) -> Unit, inflater: Layout
         title.text = recipe.title
         cookTime.text = "${recipe.readyInMinutes} min"
 
-        println(recipe.image)
-
         if (recipe.image != null) {
             Picasso.get().load("https://spoonacular.com/recipeImages/${recipe.image}").into(image)
         } else {

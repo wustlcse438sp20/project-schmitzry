@@ -55,8 +55,6 @@ class SignUpFragment : Fragment() {
             .addOnCompleteListener(activity!!) { task ->
                 if (task.isSuccessful) {
 
-                    println("Created user with email")
-
                     val uData = UserData()
 
                     (activity!! as MainActivity).db.collection("Users").document((activity!! as MainActivity).mAuth!!.currentUser!!.uid).set(uData)
@@ -65,7 +63,6 @@ class SignUpFragment : Fragment() {
 
                 } else {
 
-                    println("Failed to create user with email: ${task.exception}")
                     Toast.makeText(
                         (activity!! as MainActivity), "Authentication failed.",
                         Toast.LENGTH_SHORT

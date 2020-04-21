@@ -67,6 +67,8 @@ class RecipeDetailActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
 
+        ingredientList.clear()
+
         var ingredientAdapter = RecipeIngredientListAdapter(ingredientList)
         findViewById<RecyclerView>(R.id.recipeIngredientListContainer).adapter = ingredientAdapter
         findViewById<RecyclerView>(R.id.recipeIngredientListContainer).layoutManager = LinearLayoutManager(this)
@@ -86,6 +88,7 @@ class RecipeDetailActivity : AppCompatActivity() {
                     recipeImage.visibility = View.GONE
                 }
 
+                ingredientList.clear()
                 ingredientList.addAll(it.extendedIngredients)
 
                 ingredientAdapter.notifyDataSetChanged()
@@ -118,15 +121,10 @@ class RecipeDetailActivity : AppCompatActivity() {
 
                 val res = item.toObject(FirebaseRecipeBook::class.java)
 
-                println(res)
-
                 bookData = res!!
-
-                println("searching recipes...")
 
                 for (item in bookData.recipes) {
                     if (item.id == savedRecipeId) {
-                        println(item)
                         // found recipe!
                         currRecipe = item
                     }
@@ -141,6 +139,7 @@ class RecipeDetailActivity : AppCompatActivity() {
                     recipeImage.visibility = View.GONE
                 }
 
+                ingredientList.clear()
                 ingredientList.addAll(currRecipe.ingredients)
 
                 ingredientAdapter.notifyDataSetChanged()

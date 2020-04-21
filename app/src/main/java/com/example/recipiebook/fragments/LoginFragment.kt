@@ -52,7 +52,6 @@ class LoginFragment : Fragment() {
 
                 } else {
 
-                    println("Failed to sign in: ${task.exception}")
                     Toast.makeText(
                         (activity!! as MainActivity), "Authentication failed.",
                         Toast.LENGTH_SHORT

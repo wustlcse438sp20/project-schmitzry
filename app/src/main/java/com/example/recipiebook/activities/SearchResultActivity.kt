@@ -49,7 +49,6 @@ class SearchResultActivity : AppCompatActivity() {
         findViewById<RecyclerView>(R.id.recipeSearchResultListContainer).layoutManager = LinearLayoutManager(this)
 
         viewModel!!.recipeSearchResponse.observe(this, Observer {
-            println(it.toString())
             recipeList.clear()
             recipeList.addAll(it.results)
             resultListAdapter.notifyDataSetChanged()
